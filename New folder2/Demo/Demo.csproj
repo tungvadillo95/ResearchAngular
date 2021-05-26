@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+  <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CB.BAL.Implement\CB.BAL.Implement.csproj" />
+    <ProjectReference Include="..\CB.BAL.Interface\CB.BAL.Interface.csproj" />
+    <ProjectReference Include="..\CB.DAL.Implement\CB.DAL.Implement.csproj" />
+    <ProjectReference Include="..\CB.DAL.Interface\CB.DAL.Interface.csproj" />
+    <ProjectReference Include="..\CB.Domain\CB.Domain.csproj" />
+  </ItemGroup>
+
+
+</Project>

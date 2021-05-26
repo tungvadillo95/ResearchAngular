@@ -1,0 +1,12 @@
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\bin\Debug\netstandard2.1\CB.DAL.Interface.deps.json
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\bin\Debug\netstandard2.1\CB.DAL.Interface.dll
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\bin\Debug\netstandard2.1\CB.DAL.Interface.pdb
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\bin\Debug\netstandard2.1\CB.Domain.dll
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\bin\Debug\netstandard2.1\CB.Domain.pdb
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\obj\Debug\netstandard2.1\CB.DAL.Interface.csprojAssemblyReference.cache
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\obj\Debug\netstandard2.1\CB.DAL.Interface.AssemblyInfoInputs.cache
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\obj\Debug\netstandard2.1\CB.DAL.Interface.AssemblyInfo.cs
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\obj\Debug\netstandard2.1\CB.DAL.Interface.csproj.CoreCompileInputs.cache
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\obj\Debug\netstandard2.1\CB.DAL.Interface.csproj.CopyComplete
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\obj\Debug\netstandard2.1\CB.DAL.Interface.dll
+C:\Users\tungndn\source\repos\Demo\CB.DAL.Interface\obj\Debug\netstandard2.1\CB.DAL.Interface.pdb

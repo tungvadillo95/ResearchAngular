@@ -1,0 +1,16 @@
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.BAL.Implement.deps.json
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.BAL.Implement.dll
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.BAL.Implement.pdb
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.BAL.Interface.dll
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.DAL.Interface.dll
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.Domain.dll
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.BAL.Interface.pdb
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.DAL.Interface.pdb
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\bin\Debug\netstandard2.1\CB.Domain.pdb
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netstandard2.1\CB.BAL.Implement.csprojAssemblyReference.cache
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netstandard2.1\CB.BAL.Implement.AssemblyInfoInputs.cache
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netstandard2.1\CB.BAL.Implement.AssemblyInfo.cs
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netstandard2.1\CB.BAL.Implement.csproj.CoreCompileInputs.cache
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netstandard2.1\CB.BAL.Implement.csproj.CopyComplete
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netstandard2.1\CB.BAL.Implement.dll
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netstandard2.1\CB.BAL.Implement.pdb

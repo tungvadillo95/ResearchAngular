@@ -1,0 +1,4 @@
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netcoreapp3.1\CB.BAL.Implement.csprojAssemblyReference.cache
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netcoreapp3.1\CB.BAL.Implement.AssemblyInfoInputs.cache
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netcoreapp3.1\CB.BAL.Implement.AssemblyInfo.cs
+C:\Users\tungndn\source\repos\Demo\CB.BAL.Implement\obj\Debug\netcoreapp3.1\CB.BAL.Implement.csproj.CoreCompileInputs.cache
