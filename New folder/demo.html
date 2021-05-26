@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #html-simple {
+            margin-bottom: 20px;
+        }
+
+        .demo-container {
+            padding: 15px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.2.6/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.2.6/css/dx.softblue.css" />
+    <script src="https://unpkg.com/devextreme-quill/dist/dx-quill.min.js"></script>
+    <script src="https://cdn3.devexpress.com/jslib/20.2.6/js/dx.all.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div class="demo-container">
+        <div id="html-editor" tabindex="0">
+            <!-- <p>
+                <span class="dx-mention" spellcheck="false" data-marker="@" data-mention-value="Kevin Carter"><span><span>@</span>Kevin Carter</span></span> I think John's expertise can be very valuable in our startup.
+            </p> -->
+        </div>
+    </div>
+    <div>
+        <select class="js-example-basic-multiple" name="AbilityIds" id="AbilityIds" multiple="multiple">
+            <option value="1">thể thao</option>
+            <option value="2">Âm nhạc</option>
+            <option value="3">Olivia Peyton</option>
+        </select>
+    </div>
+    <!-- <div class="dx-viewport demo-container">
+        <h2>Type "@" or "#" to show a suggestion list</h2>
+        <h3>Use a string array as dataSource</h3>
+        <div id="html-simple">
+            <span class="dx-mention" spellcheck="false" data-marker="@" data-mention-value="Olivia"><span
+                    contenteditable="false"><span>@</span>Olivia</span></span> is fixing <span class="dx-mention"
+                spellcheck="false" data-marker="#" data-mention-value="141"><span
+                    contenteditable="false"><span>#</span>141</span></span> now.
+        </div>
+        <h3>Use an array of objects as dataSource</h3>
+        <div id="html-objects"></div>
+    </div> -->
+</body>
+<script>
+    // $('#html-editor').on('keydown', function(event) {
+    // console.log('key',event.keyCode);
+    // if(event.keyCode == 16){
+    //     // var nodeList = document.querySelectorAll('.dx-mention');
+    //     $("#html-editor").dxHtmlEditor({
+    //         mentions: [{
+    //             marker: "#",
+    //             dataSource: employees2,
+    //             searchExpr: "text",
+    //             valueExpr: "id",
+    //             itemTemplate: itemTemplateShow,
+    //             displayExpr: displayExprShow
+    //         }]
+    //     });
+    //  }
+    //});
+    var itemTemplateShow = function (item) {
+        console.log(1);
+        // var nodeList = document.querySelectorAll('.dx-mention');
+        // if(nodeList.length == 1){
+        //     $("#html-editor").dxHtmlEditor({
+        //     mentions: [{
+        //         marker: "#",
+        //         dataSource: employees2,
+        //         searchExpr: "text",
+        //         valueExpr: "id",
+        //         itemTemplate: itemTemplateShow,
+        //         displayExpr: displayExprShow
+        //     }]
+        // });
+        // }
+        return (
+            //   '<i class="dx-icon-user"></i> ' + 
+            item.text
+            //   + " (" + item.position + ")"
+        );
+    }
+    var arrId = [];
+    var displayExprShow = function (item) {
+        console.log(2, item);
+        arrId = $('#AbilityIds').val();
+        arrId.push(item.id);
+        $('#AbilityIds').val(arrId).change();
+        setTimeout(function () {
+            $('#html-editor p').empty();
+            $('#html-editor p').focus();
+        }, 50);
+        return (
+            //   '<i class="dx-icon-user"></i> ' + 
+            item.text
+            //   + " (" + item.position + ")"
+        );
+    };
+    $(function () {
+        // $("#html-editor").dxHtmlEditor({
+        //     mentions: [{
+        //         marker: "#",
+        //         dataSource: employees,
+        //         searchExpr: "text",
+        //         displayExpr: "text",
+        //         valueExpr: "id",
+        //     }]
+        // });
+        $("#html-editor").dxHtmlEditor({
+            mentions: [{
+                marker: "#",
+                dataSource: employees,
+                searchExpr: "text",
+                valueExpr: "id",
+                itemTemplate: itemTemplateShow,
+                displayExpr: displayExprShow
+            }]
+        });
+    });
+    var employees3 = [];
+    var employees = [{
+        text: "thể thao", id: 1
+    }, {
+        text: "Âm nhạc", id: 2
+    }, {
+        text: "Olivia Peyton", id: 3
+    }];
+    var employees2 = [
+        {
+            text: "Robert Reagan", id: 4
+        }, {
+            text: "Cynthia Stanwick", id: 5
+        }, {
+            text: "Brett Wade ", id: 6
+        }, {
+            text: "Greta Sims", id: 7
+        }];
+//     $(function() {
+//     $("#html-editor").dxHtmlEditor({
+//         mentions: [{
+//             dataSource: employees,
+//             searchExpr: "text",
+//             displayExpr: "text",
+//             valueExpr: "text"
+//         }]
+//     });
+// });
+</script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.js-example-basic-multiple').select2();
+    });
+    // $('#inputfield').val(document.querySelectorAll('#row1 span')[0].textContent) ;var numberI = 0;
+    //     $('#inputfield').on('keydown', function(){ 
+    //          $('#inputfield').val(document.querySelectorAll('#row1 span')[numberI].textContent); if(event.keyCode == 32) numberI++ ;
+    //         });
+</script>
+
+</html>

@@ -1,0 +1,128 @@
+<form [formGroup]="formAddEditTeacher" (ngSubmit)="submit()">
+  <div class="row col-xl-12">
+    <div class="col-xl-8 col-md-12">
+      <div class="row form-group">
+        <label class="col-3 font-weight-bold">Họ và tên:</label>
+        <div class="col-9">
+          <input type="text" class="form-control" formControlName="fullName" placeholder="Nhập Họ và tên">
+          <div *ngIf="(formAddEditTeacher.get('fullName')?.invalid && formAddEditTeacher.get('fullName')?.touched)">
+            <span *ngIf="formAddEditTeacher.get('fullName')?.errors?.required" class="form_errors">
+              Chưa nhập họ và tên Giáo viên.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label class="col-3 font-weight-bold">Giới tính:</label>
+        <div class="col-9">
+          <select class="custom-select" style="color: black;"
+            formControlName="gender">
+            <option selected value="">-Chọn-</option>
+            <option value="true">Nam</option>
+            <option value="false">Nữ</option>
+          </select>
+          <div *ngIf="(formAddEditTeacher.get('gender')?.invalid && formAddEditTeacher.get('gender')?.touched)">
+            <span *ngIf="formAddEditTeacher.get('gender')?.errors?.required" class="form_errors">
+              Chưa chọn giới tính.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label class="col-3 font-weight-bold">Ngày sinh:</label>
+        <div class="col-9">
+          <input type="date" class="form-control" my-date-format="dd/MM/yyyy" style="color: black;" 
+            formControlName="dob"/>
+          <div *ngIf="(formAddEditTeacher.get('dob')?.invalid && formAddEditTeacher.get('dob')?.touched)">
+            <span *ngIf="formAddEditTeacher.get('dob')?.errors?.required" class="form_errors">
+              Chưa nhập ngày sinh.
+            </span>
+            <span *ngIf="formAddEditTeacher.get('dob')?.errors?.validateDob" class="form_errors">
+              Số tuổi phải tối thiểu là 20 và tối đa là 60 tuổi.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label class="col-3 font-weight-bold">Email:</label>
+        <div class="col-9">
+          <input type="text" class="form-control" placeholder="Email" style="color: black;" 
+            formControlName="email"/>
+          <div *ngIf="(formAddEditTeacher.get('email')?.invalid && formAddEditTeacher.get('email')?.touched)">
+            <span *ngIf="formAddEditTeacher.get('email')?.errors?.required" class="form_errors">
+              Chưa nhập email.
+            </span>
+            <span *ngIf="formAddEditTeacher.get('email')?.errors?.email" class="form_errors">
+              Email không đúng định dạng.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label class="col-3 font-weight-bold">Số điện thoại:</label>
+        <div class="col-9">
+          <input type="text" class="form-control" placeholder="Số điện thoại" style="color: black;" 
+            formControlName="phoneNumber"/>
+          <div *ngIf="(formAddEditTeacher.get('phoneNumber')?.invalid && formAddEditTeacher.get('phoneNumber')?.touched)">
+            <span *ngIf="formAddEditTeacher.get('phoneNumber')?.errors?.required" class="form_errors">
+              Chưa nhập số điện thoại.
+            </span>
+            <span *ngIf="formAddEditTeacher.get('phoneNumber')?.errors?.pattern" class="form_errors">
+              Số điện thoại không đúng định dạng.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label class="col-3 font-weight-bold">Địa chỉ:</label>
+        <div class="col-9">
+          <input type="text" class="form-control" placeholder="Địa chỉ" style="color: black;"
+            formControlName="address"/>
+          <div *ngIf="(formAddEditTeacher.get('address')?.invalid && formAddEditTeacher.get('address')?.touched)">
+            <span *ngIf="formAddEditTeacher.get('address')?.errors?.required" class="form_errors">
+              Chưa nhập địa chỉ.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label class="col-3 font-weight-bold">Môn dạy:</label>
+        <div class="col-9">
+          <ng-multiselect-dropdown [placeholder]="'Chọn môn học'" [settings]="dropdownSettings" [data]="dropdownList" [(ngModel)]="selectedItems"
+            formControlName="subjects">
+          </ng-multiselect-dropdown>
+          <div *ngIf="(formAddEditTeacher.get('subjects')?.invalid && formAddEditTeacher.get('subjects')?.touched)">
+            <span *ngIf="formAddEditTeacher.get('subjects')?.errors?.required" class="form_errors">
+              Chưa chọn môn dạy.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label class="col-3 font-weight-bold">Hình ảnh:</label>
+        <div class="col-9">
+          <div class="custom-file">
+            <input type="file" #file class="custom-file-input form-control" 
+              #saveButton
+              placeholder="Ảnh đại diện"
+              formControlName="fileAvatar"
+              (change)="readURL($event);">
+            <label class="custom-file-label">{{ photoFileName }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="m-5 text-center">
+        <img [src]="imageSrc || 'https://localhost:44317/Photos/none_avatar.png'" width="200px" alt="your image" />
+      </div>
+    </div>
+  </div>
+  <div class="text-center alert alert-danger" *ngIf = "isShowMessageError" >
+    {{messageError}}
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-success" style="width: 80px;"> Lưu </button>
+    <button type="button" class="btn btn-danger" style="width: 80px;" (click) = " closeModal()" data-dismiss="modal"> Hủy </button>
+  </div>
+</form>
